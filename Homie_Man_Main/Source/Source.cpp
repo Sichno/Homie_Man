@@ -88,9 +88,9 @@ void intro() {
 	cin >> myBarrio;
 	userName myBarrio(myBarrio);
 
-	cout << "Ay foo I hate Barrio " << 
+	cout << "Ay foo I hate Barrio ";
 	userName getBarrio();
-	cout << "\n \n \n"
+	cout << "\n \n \n";
 	//cout << test2.getName();
 
 	cout << "\n \n ANDALE VATO!";
