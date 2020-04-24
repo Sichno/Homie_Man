@@ -17,6 +17,7 @@ void intro();
 void menu();
 void txtDsplay(string text);
 
+/*
 void attackSequence(string enemy, int level) {
 	//On attackSequence(enemies.badVato("Feeble Vato", 1)), can pass through String and 1 int
 
@@ -33,10 +34,10 @@ void attackSequence(string enemy, int level) {
 		val = x - hp;
 		hp = val;
 		returnVal = returnVal - hp;
-		cout << "Wow " << /*enemy*/ " did " << returnVal << " damage!";
+		cout << "Wow " << " did " << returnVal << " damage!"; 
 	}
 }
-
+*/
 
 
 class userName {
@@ -81,12 +82,10 @@ void intro() {
 	userName test(myName);
 	//cout << test.getName();
 
-	userName myBarrio(val2);
-
 	cout << val1 + ", Where you from foo?" << endl;
-	string myBarrio;
-	cin >> myBarrio;
-	userName myBarrio(myBarrio);
+	string userBarrio;
+	cin >> userBarrio;
+	userName myBarrio(userBarrio);
 
 	cout << "Ay foo I hate Barrio ";
 	userName getBarrio();
