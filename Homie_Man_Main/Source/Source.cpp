@@ -54,7 +54,7 @@ class userName {
 			return myName;
 		}
 		//Characters Barrio Information
-		void myBarrio(string barrioVal) {
+		void inputBarrio(string barrioVal) {
 			//Grabs the string, and sends to setBarrio
 			setBarrio(barrioVal);
 		}
@@ -82,10 +82,10 @@ void intro() {
 	userName test(myName);
 	//cout << test.getName();
 
-	cout << val1 + ", Where you from foo?" << endl;
+	cout << "Where you from foo?" << endl;
 	string userBarrio;
 	cin >> userBarrio;
-	userName myBarrio(userBarrio);
+	userName inputBarrio(userBarrio);
 
 	cout << "Ay foo I hate Barrio ";
 	userName getBarrio();
@@ -100,7 +100,7 @@ void intro() {
 
 
 
-	attackSequence(strVal1, vatoVal);
+	//attackSequence(strVal1, vatoVal);
 
 
 
