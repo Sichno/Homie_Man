@@ -126,10 +126,9 @@ void load() {
 int main() {
 
 	//intro();
-	//menu();
-	characterSheet firstClass;
+	menu();
+	//characterSheet firstClass;
 
-	cout << "\n \n \n \n \n NEW FANGLED TEST \n \n \n \n";
 
 	return 0;
 }
