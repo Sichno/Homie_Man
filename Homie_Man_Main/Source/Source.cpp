@@ -129,7 +129,7 @@ int main() {
 	//menu();
 	characterSheet firstClass;
 
-	cout<< "/N /N /N NEW FANGLED TEST"
+	cout << "\n \n \n \n \n NEW FANGLED TEST \n \n \n \n";
 
 	return 0;
 }
