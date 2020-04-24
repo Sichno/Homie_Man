@@ -129,5 +129,7 @@ int main() {
 	//menu();
 	characterSheet firstClass;
 
+	cout<< "/N /N /N NEW FANGLED TEST"
+
 	return 0;
 }
