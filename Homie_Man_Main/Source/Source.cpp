@@ -24,23 +24,6 @@ void attackSequence(string enemy, int level) {
 	//string enemy = enemy;
 	int enemyLevel = level;
 	cout << " Aguas! You have been ambushed by an angry " << enemy << " !!!! \n \n";
-
-}
-
-
-
-class userName {
-	//Please Migrate me to characterSheet.h
-public:
-	userName(string z) {
-		setName(z);
-	}
-	void setName(string x) {
-		myName = x;
-	}
-	string getName() {
-		return myName;
-	}
 	int damage(int x) {
 		int val;
 		int returnVal;
@@ -52,28 +35,62 @@ public:
 		returnVal = returnVal - hp;
 		cout << "Wow " << /*enemy*/ " did " << returnVal << " damage!";
 	}
+}
 
-private:
-	string myName;
-	int hp = 100;
-	int atk = 5;
-	int def = 5;
 
+
+class userName {
+	//Please Migrate me to characterSheet.h
+	public:
+		//Username of Character
+		userName(string z) {
+			setName(z);
+		}
+		void setName(string x) {
+			myName = x;
+		}
+		string getName() {
+			return myName;
+		}
+		//Characters Barrio Information
+		void myBarrio(string barrioVal) {
+			//Grabs the string, and sends to setBarrio
+			setBarrio(barrioVal);
+		}
+		void setBarrio(string y) {
+			myBarrio = y;
+		}
+		string getBarrio() {
+			return myBarrio;
+		}
+	private:
+		string myName;
+		string myBarrio;
+		int hp = 100;
+		int atk = 5;
+		int def = 5;
+	
 };
 
 
 
 void intro() {
 	cout << "whats your name foo" << endl;
-	string val1;
-	cin >> val1;
-	userName test(val1);
+	string myName;
+	cin >> myName;
+	userName test(myName);
 	//cout << test.getName();
 
+	userName myBarrio(val2);
+
 	cout << val1 + ", Where you from foo?" << endl;
-	string val2;
-	cin >> val2;
-	userName test2(val2);
+	string myBarrio;
+	cin >> myBarrio;
+	userName myBarrio(myBarrio);
+
+	cout << "Ay foo I hate Barrio " << 
+	userName getBarrio();
+	cout << "\n \n \n"
 	//cout << test2.getName();
 
 	cout << "\n \n ANDALE VATO!";
