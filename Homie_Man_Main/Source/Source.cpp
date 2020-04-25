@@ -2,6 +2,7 @@
 #include <string>
 #include <thread>
 #include <chrono>
+#include <cstring>
 //#include "characterSheet.h"
 
 using namespace std;
@@ -17,98 +18,43 @@ void intro();
 void menu();
 void txtDsplay(string text);
 
-/*
-void attackSequence(string enemy, int level) {
-	//On attackSequence(enemies.badVato("Feeble Vato", 1)), can pass through String and 1 int
-
-	//STARTS ATTACK
-	//string enemy = enemy;
-	int enemyLevel = level;
-	cout << " Aguas! You have been ambushed by an angry " << enemy << " !!!! \n \n";
-	int damage(int x) {
-		int val;
-		int returnVal;
-
-		returnVal = hp;
-
-		val = x - hp;
-		hp = val;
-		returnVal = returnVal - hp;
-		cout << "Wow " << " did " << returnVal << " damage!"; 
-	}
-}
-*/
-
+int nameMax = 20;
+int barrioMax = 30;
 
 class userName {
 	//Please Migrate me to characterSheet.h
-	public:
-		//Username of Character
-		userName(string z) {
-			setName(z);
-		}
-		void setName(string x) {
-			myName = x;
-		}
-		string getName() {
-			return myName;
-		}
-		//Characters Barrio Information
-		void inputBarrio(string barrioVal) {
-			//Grabs the string, and sends to setBarrio
-			setBarrio(barrioVal);
-		}
-		void setBarrio(string y) {
-			myBarrio = y;
-		}
-		string getBarrio() {
-			return myBarrio;
-		}
 	private:
-		string myName;
-		string myBarrio;
-		int hp = 100;
-		int atk = 5;
-		int def = 5;
-	
-};
+		char myName[nameMax] = '\0';
+		char myBarrio[barrioMax] = '\0';
+	public:
+		userName();
+		~userName();
+		/////Accessors
+		const char* getmyName() const;
+		const char* getmyBarrio() const;
+		/////Mutators
+		bool setmyName(const char*);
+		bool setmyBarrio(const char*);
+		////////////////
+		
+	};
+
+//////////////////////MAIN IS UNDERNEATH ///////////////////////
+int main() {
+
+	menu();
+	//characterSheet firstClass;
+
+	return 0;
+}
+/////////////////////MAIN ENDS FRIENDS /////////////////////////
 
 
 
-void intro() {
-	cout << "whats your name foo" << endl;
-	string myName;
-	cin >> myName;
-	userName test(myName);
-	//cout << test.getName();
-
-	cout << "Where you from foo?" << endl;
-	string userBarrio;
-	cin >> userBarrio;
-	userName inputBarrio(userBarrio);
-
-	cout << "Ay foo I hate Barrio ";
-	userName getBarrio();
-	cout << "\n \n \n";
-	//cout << test2.getName();
-
-	cout << "\n \n ANDALE VATO!";
-	//enemies.badVato(1);
-	//can load level 1 bad vato into attack sequence
-	string strVal1 = "badVato";
-	int vatoVal = 1;
-
-
-
-	//attackSequence(strVal1, vatoVal);
-
-
-
-};
 
 
 void menu() {
-	cout << "A Diego'n Tonitosoft game (n' Sometimes Chon).... \n \n \n \n";
+	cout << "A Diego'n Tonitosoft game (n' Sometimes Chon N RARELY jenny).... \n \n \n \n";
 	cout << " Homie_Man \n";
 	cout << " \n \n \n";
 	cout << "(1) - New Game \n \n";
@@ -131,18 +77,73 @@ void menu() {
 
 
 };
+void intro() {
+	//Intro begins, (only onFirstRun !!)
+	//Ask for User Name
+	char mn[nameMax] = '\0';
+	cout << "whats your name foo\n";
+	cin >> mn;
+	//for (int i=0; i<20; i++){
+	//	mn[i];
+	//}
+	setmyName(mn);
+	
 
+	//Ask for Barrio (Clan) Name...
+	char userBarrio[barrioMax] = '\0';
+	cout << "Where you from foo?" << endl;
+	cin >> userBarrio;
+	setmyBarrio(userBarrio);
+	//userName inputBarrio(userBarrio);
+
+	getBarrio();
+	cout << "Ay foo I hate " << getmyBarrio() << "!\n";
+	cout << "\n \n \n";
+
+	cout << "\n \n ANDALE VATO!";
+	//enemies.badVato(1);
+	//can load level 1 bad vato into attack sequence
+	string strVal1 = "badVato";
+	int vatoVal = 1;
+
+
+
+	//attackSequence(strVal1, vatoVal);
+
+
+
+};
 void load() {
 	cout << "Feature COMING SOON!\n \n";
 	menu();
 };
 
-int main() {
+////constructor/destructor
+userName::userName
+{
+	myName[0] = '\0';
+	myBarrio[0] = '\0';
+}
+userName::~userName
+{
+	myName[0] = '\0';
+	myBarrio[0] = '\0';
+}
 
-	//intro();
-	menu();
-	//characterSheet firstClass;
+/////////accessors
+const char* userName::getmyName() const{
+	return(myName);
+}
+const char* userName::getmyBarrio() const{
+	return(myBarrio);
+}
 
-
-	return 0;
+/////////mutators
+bool userName::setmyName(const char* mn){
+	strcpy(myName, mn);
+	return(true);
+}
+bool userName::setmyBarrio(const char* mb){
+	strcpy(myBarrio, mb);
+	return(true);
 }
